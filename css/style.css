@@ -1,9 +1,6 @@
-#nav-bar{
+#nav-bar, footer{
     background-color: #AE4438; 
 }
-#nav-bar a{
+#nav-bar a, footer {
     color: white;
-}
-footer{
-    background-color: #AE4438;
 }
