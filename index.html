@@ -156,25 +156,27 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h4>Choose The size of your Pizza</h4>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-              <label class="form-check-label" for="exampleRadios1">
-                Default radio
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-              <label class="form-check-label" for="exampleRadios2">
-                Second default radio
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-              <label class="form-check-label" for="exampleRadios3">
-                Disabled radio
-              </label>
-            </div>
+            <form id="myOrders">
+              <h5>Choose The size of your Pizza</h5>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="small" id="small" value="small">
+                <label class="form-check-label" for="small">
+                  Small
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="medium" id="medium" value="medium">
+                <label class="form-check-label" for="large">
+                  Medium
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Large" id="large" value="large">
+                <label class="form-check-label" for="large">
+                 Large
+                </label>
+              </div>
+            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
