@@ -47,7 +47,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="card h-100">
-                    <img src="./images/hawaiian.jpeg" class="card-img-top h-50" alt="...">
+                    <img src="./images/hawaiian.jpeg" id="pizza-img" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Hawaiian</h5>
                       <p class="card-text">Ksh. 500 - 1200.</p>
@@ -58,8 +58,8 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="card h-100">
-                    <img src="./images/pepperoni1.jpeg" class="card-img-top h-50" alt="...">
+                  <div class="card">
+                    <img src="./images/pepperoni1.jpeg" id="pizza-img" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Pepperonni</h5>
                       <p class="card-text">Ksh. 600-1800</p>
@@ -72,8 +72,8 @@
               </div>
               <div class="row mt-5">
                 <div class="col-md-6">
-                  <div class="card h-100">
-                    <img src="./images/tikka.jpg" class="card-img-top h-50" alt="...">
+                  <div class="card">
+                    <img src="./images/tikka2.png" id="pizza-img" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Chicken Tikka</h5>
                       <p class="card-text">Ksh. 700-2000</p>
@@ -84,8 +84,8 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="card h-100">
-                    <img src="./images/bbq.jpeg" class="card-img-top h-50" alt="...">
+                  <div class="card">
+                    <img src="./images/bbq2.jpeg" id="pizza-img" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">Bbq Chicken</h5>
                       <p class="card-text">Ksh. 500 - 1700.</p>
@@ -121,10 +121,19 @@
         </div>
       </div>
     </div>
-    <footer class=" text-center text-lg-start mt-5">
-      <div class="contact text-center p-3">
-        <h4>Contact Us</h4>
+    <div class="container-fluid mt-5" id="delivery">
+      <div class="text-center p-3">
+        <div class="row">
+          <div class="col-md-8 pb-4">
+            <h3 class="pb-4">Where would you like us to deliver to?</h3>
+            <input type="text" name="location" id="location">
+          </div>
+        </div>
       </div>
+
+    </div>
+    <footer class=" text-center text-lg-start" id="footer">
+      <div class="contact text-center p-3"></div>
       <div class="text-center p-3">
         © 2021 Copyright: Clare Limo
       </div>
