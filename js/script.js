@@ -102,6 +102,8 @@ $(document).ready(function(){
                     var pizzaChoice = new Pizza(pizza.name,pizzaSize,pizzaCrust,pizzaToppings,total);
                     $("#nameOrder").text( pizzaChoice.name); 
                     $("#priceOrder").text( "Ksh." + pizzaChoice.total); 
+                    $(".table").show();
+                    $("#total-orders").append('<tr><td id="pizzaname">'+pizzaChoice.name +'</td><td id="pizzasize">' + pizzaChoice.size + '</td><td id="pizzacrust">'+pizzaChoice.crust + '</td><td id="pizzatopping">'+pizzaChoice.toppings+'</td><td id="pizzaprice">'+pizzaChoice.total+'</td></tr>');
                 }); 
             }
         })
