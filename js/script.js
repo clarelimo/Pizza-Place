@@ -69,7 +69,6 @@ $(document).ready(function(){
 
                 var pizzaSize = "";
                 var pizzaCrust = "";
-
                 var pizzaToppings = [];
 
                 $("#myOrders").click(function() {
@@ -137,7 +136,7 @@ $(document).ready(function(){
             console.log(locationInput)
             console.log(phoneInput)
             if(nameInput !== "" && locationInput !== "" && phoneInput !== ""){
-                alert("Hey "+ nameInput+ ","+" We have received your order and our will be delivering it to: "+ locationInput);
+                alert("Hey "+ nameInput+ ","+" We have received your order and our rider will be delivering it to: " + locationInput);
             }
             $("input#username").val("");
             $("input#location").val("");

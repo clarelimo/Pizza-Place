@@ -10,8 +10,6 @@
     <title>Pizza Place</title>
 </head>
 <body>
-
-
     <div class="container-fluid" id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light bg-black">
             <div class="container-fluid">
@@ -25,7 +23,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Orders</a>
+                    <a class="nav-link" href="#orders-display">Orders</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">SignUp</a>
@@ -128,7 +126,7 @@
           <div class="cart-header">
             <h3>Pizza Orders</h3>
           </div>
-          <div class="orders mt-4"> 
+          <div class="orders mt-4" id="orders-display"> 
             <div class="total">
               <p id="notordered">You have not selected any item.</p>
               <table class="table table-striped">
@@ -306,7 +304,7 @@
               <div class="form-check">
                 <div class="row">
                   <div class="col">
-                    <input class="form-check-input" type="radio" name="crust" id="gluten-free" value="gluten-free">
+                    <input class="form-check-input" type="radio" name="crust" id="gluten" value="gluten-free">
                     <label class="form-check-label" for="gluten-free">
                       Gluten-free
                     </label>
@@ -339,7 +337,7 @@
       <div class="text-center p-3">
         <div class="row">
           <div class="col-md-8 pb-4">
-            <h3 class="pb-4">Where would you like us to deliver to?</h3>
+            <h3 class="pb-4">What can we improve on?</h3>
             <input type="text" name="location" id="address" placeholder="Type your address">
           </div>
         </div>
