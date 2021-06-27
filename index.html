@@ -155,8 +155,30 @@
               <p id="deliveryfee">The Delivery fee is: Ksh.200</p>
             </div>
             <div class="order-btn">
-              <button type="submit">Proceed to Checkout</button>
+              <button form="checkoutfrm" id="proceedbtn" type="submit">Proceed to Checkout</button>
             </div>
+          </div>
+          <div class="checkout mt-5">
+            <form id="checkoutfrm">
+              <div class="form-row align-items-center">
+                <div class="col-auto">
+                  <label class="sr-only" for="username">Name</label>
+                  <input type="text" class="form-control mb-2" id="username" placeholder="Jane Doe">
+                </div>
+                <div class="col-auto">
+                  <label class="sr-only" for="phone">Phone Number</label>
+                    <input type="text" class="form-control" id="phone" placeholder="Phone Number">
+                </div>
+                <div class="col-auto">
+                  <label class="sr-only" for="location">location</label>
+                  <input type="text" class="form-control" id="location" placeholder="Location">
+                </div>
+              </div>
+                <div class="col-auto">
+                  <button type="submit" id="checkbtn" class="mt-3">Order</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -318,7 +340,7 @@
         <div class="row">
           <div class="col-md-8 pb-4">
             <h3 class="pb-4">Where would you like us to deliver to?</h3>
-            <input type="text" name="location" id="location" placeholder="Type your address">
+            <input type="text" name="location" id="address" placeholder="Type your address">
           </div>
         </div>
       </div>

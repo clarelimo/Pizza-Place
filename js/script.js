@@ -69,7 +69,7 @@ $(document).ready(function(){
 
                 var pizzaSize = "";
                 var pizzaCrust = "";
-                var toppingName = "";
+
                 var pizzaToppings = [];
 
                 $("#myOrders").click(function() {
@@ -116,13 +116,33 @@ $(document).ready(function(){
                     $(".table").show();
                     $("#total-orders").append('<tr><td id="pizzaname">'+pizzaChoice.name +'</td><td id="pizzasize">' + pizzaChoice.size + '</td><td id="pizzacrust">'+pizzaChoice.crust + '</td><td id="pizzatopping">'+pizzaChoice.toppings+'</td><td id="pizzaprice">'+pizzaChoice.total+'</td></tr>');
                     $("#pizzatotalprice").text("Your total order amount is: " + netTotal);
-                }); 
 
-                $('input[name="size"]').prop('checked', false);
-                $('input[name="crust"]').prop('checked', false);
-                $('input[name="topping"]').prop('checked', false);
+                    $('input[name="size"]').prop('checked', false);
+                    $('input[name="crust"]').prop('checked', false);
+                    $('input[name="topping"]').prop('checked', false);
+                    $(".order-btn").show()
+                }); 
             }
         })
     });
+    $("button#proceedbtn").click(function(){
+        $(".checkout").show();
+        $("form#checkoutfrm").submit(function(event){
+            event.preventDefault();
+            var nameInput = $("input#username").val();
+            var locationInput = $("input#location").val();
+            var phoneInput = $("input#phone").val();
+            
+            console.log(nameInput)
+            console.log(locationInput)
+            console.log(phoneInput)
+            if(nameInput !== "" && locationInput !== "" && phoneInput !== ""){
+                alert("Hey "+ nameInput+ ","+" We have received your order and our will be delivering it to: "+ locationInput);
+            }
+            $("input#username").val("");
+            $("input#location").val("");
+            $("input#phone").val("");
+        });
+    })
 });
 

@@ -13,6 +13,6 @@
 #delivery{
     background-color:#A5AAB0;
 }
-table, #deliveryfee{
+table, #deliveryfee,.order-btn,.checkout{
     display: none;
 }
