@@ -61,7 +61,7 @@ $(document).ready(function(){
     var total = 0;
     var sizeInput = 0;
     var toppingInput = 0;
-
+    var netTotal = 0;
     pizzas.forEach(function(pizza){
         $("button").click(function(){
             if(this.id === pizza.id){
@@ -71,6 +71,7 @@ $(document).ready(function(){
                 var pizzaCrust = "";
                 var toppingName = "";
                 var pizzaToppings = [];
+
                 $("#myOrders").click(function() {
                     pizza.sizes.forEach(function(size){
                         var isChecked = $("#"+size.name).is(':checked');
@@ -91,24 +92,35 @@ $(document).ready(function(){
                         if(isChecked){
                             $("#"+topping.name+"-"+"price").text(topping.price);
                             toppingInput = topping.price;
-                            toppingName = topping.name;
-  
+                            if(!pizzaToppings.includes(topping.name)){
+                                pizzaToppings.push(topping.name);
+                            }
                         }
                     })
                     total = sizeInput + toppingInput;
-                    pizzaToppings.push(toppingName);
+                   
+                   
                     $("#totalPrice").text( "Ksh."+ total); 
                 });
 
                 $("form#myOrders").submit(function(event){
+                    
                     event.preventDefault();
+                    netTotal += total;
+                    console.log(netTotal)
                     var pizzaChoice = new Pizza(pizza.name,pizzaSize,pizzaCrust,pizzaToppings,total);
+
                     $("#nameOrder").text( pizzaChoice.name); 
                     $("#priceOrder").text( "Ksh." + pizzaChoice.total); 
                     $("#notordered").hide();
                     $(".table").show();
                     $("#total-orders").append('<tr><td id="pizzaname">'+pizzaChoice.name +'</td><td id="pizzasize">' + pizzaChoice.size + '</td><td id="pizzacrust">'+pizzaChoice.crust + '</td><td id="pizzatopping">'+pizzaChoice.toppings+'</td><td id="pizzaprice">'+pizzaChoice.total+'</td></tr>');
+                    $("#pizzatotalprice").text("Your total order amount is: " + netTotal);
                 }); 
+
+                $('input[name="size"]').prop('checked', false);
+                $('input[name="crust"]').prop('checked', false);
+                $('input[name="topping"]').prop('checked', false);
             }
         })
     });
