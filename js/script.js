@@ -69,6 +69,7 @@ $(document).ready(function(){
 
                 var pizzaSize = "";
                 var pizzaCrust = "";
+                var toppingName = "";
                 var pizzaToppings = [];
                 $("#myOrders").click(function() {
                     pizza.sizes.forEach(function(size){
@@ -89,11 +90,13 @@ $(document).ready(function(){
                         var isChecked = $("#"+topping.name).is(':checked');
                         if(isChecked){
                             $("#"+topping.name+"-"+"price").text(topping.price);
-                            toppingInput +=topping.price;
-                            pizzaToppings.push(topping.name);
+                            toppingInput = topping.price;
+                            toppingName = topping.name;
+  
                         }
                     })
                     total = sizeInput + toppingInput;
+                    pizzaToppings.push(toppingName);
                     $("#totalPrice").text( "Ksh."+ total); 
                 });
 
@@ -102,6 +105,7 @@ $(document).ready(function(){
                     var pizzaChoice = new Pizza(pizza.name,pizzaSize,pizzaCrust,pizzaToppings,total);
                     $("#nameOrder").text( pizzaChoice.name); 
                     $("#priceOrder").text( "Ksh." + pizzaChoice.total); 
+                    $("#notordered").hide();
                     $(".table").show();
                     $("#total-orders").append('<tr><td id="pizzaname">'+pizzaChoice.name +'</td><td id="pizzasize">' + pizzaChoice.size + '</td><td id="pizzacrust">'+pizzaChoice.crust + '</td><td id="pizzatopping">'+pizzaChoice.toppings+'</td><td id="pizzaprice">'+pizzaChoice.total+'</td></tr>');
                 }); 
