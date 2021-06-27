@@ -50,8 +50,11 @@ function Pizza(name,size,crust,toppings,total){
     this.total = total;
 }
 
-Pizza.prototype.totalAmount = function(){
-
+Pizza.prototype.pizzaTopp = function(){
+    let top = "";
+    this.toppings.forEach(function(topping){
+        top = topping.name;
+    });
 }
 
 $(document).ready(function(){
@@ -97,9 +100,7 @@ $(document).ready(function(){
                 $("form#myOrders").submit(function(event){
                     event.preventDefault();
                     var pizzaChoice = new Pizza(pizza.name,pizzaSize,pizzaCrust,pizzaToppings,total);
-                    alert(pizzaChoice.name)
-                    alert(pizzaChoice.total)
-                    $("#totalOrder").text( "Ksh." + pizzaChoice.name); 
+                    $("#nameOrder").text( pizzaChoice.name); 
                     $("#priceOrder").text( "Ksh." + pizzaChoice.total); 
                 }); 
             }
