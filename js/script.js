@@ -42,40 +42,66 @@ var pizzas =[{name: "Hawaiian",
 // add the price to totals
 // return the total
 
+function Pizza(name,size,crust,toppings,total){
+    this.name = name;
+    this.size = size;
+    this.crust = crust;
+    this.toppings = toppings;
+    this.total = total;
+}
+
+Pizza.prototype.totalAmount = function(){
+
+}
+
 $(document).ready(function(){
     var total = 0;
+    var sizeInput = 0;
+    var toppingInput = 0;
+
     pizzas.forEach(function(pizza){
         $("button").click(function(){
             if(this.id === pizza.id){
                 $("#orderName").text(pizza.name);
-                var sizeInput = 0;
-                var toppingInput = 0;
+
+                var pizzaSize = "";
+                var pizzaCrust = "";
+                var pizzaToppings = [];
                 $("#myOrders").click(function() {
                     pizza.sizes.forEach(function(size){
                         var isChecked = $("#"+size.name).is(':checked');
                         if(isChecked){
                             $("#"+size.name+"-"+"price").text(size.price);
                             sizeInput = size.price;
-                            console.log(sizeInput)
+                            pizzaSize = size.name;
                         }
                     });
                     pizza.crusts.forEach(function(crust){
                         var isChecked = $("#"+crust.name).is(':checked');
                         if(isChecked){
-                            $("#"+crust.name+"-"+"price").text(crust.price);
+                            pizzaCrust = crust.name;
                         }
                     });
                     pizza.toppings.forEach(function(topping){
                         var isChecked = $("#"+topping.name).is(':checked');
                         if(isChecked){
                             $("#"+topping.name+"-"+"price").text(topping.price);
-                            toppingInput = topping.price;
-                            console.log(toppingInput)
+                            toppingInput +=topping.price;
+                            pizzaToppings.push(topping.name);
                         }
                     })
                     total = sizeInput + toppingInput;
                     $("#totalPrice").text( "Ksh."+ total); 
-                });  
+                });
+
+                $("form#myOrders").submit(function(event){
+                    event.preventDefault();
+                    var pizzaChoice = new Pizza(pizza.name,pizzaSize,pizzaCrust,pizzaToppings,total);
+                    alert(pizzaChoice.name)
+                    alert(pizzaChoice.total)
+                    $("#totalOrder").text( "Ksh." + pizzaChoice.name); 
+                    $("#priceOrder").text( "Ksh." + pizzaChoice.total); 
+                }); 
             }
         })
     });
